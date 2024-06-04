@@ -16,7 +16,7 @@ public:
         end_time = std::chrono::steady_clock::now();
     }
 
-    double elapsed_milliseconds() const {
-        return std::chrono::duration<double, std::milli>(end_time - start_time).count();
+    double elapsed_nanoseconds() const {
+        return std::chrono::duration<double, std::nano>(end_time - start_time).count();
     }
 };
