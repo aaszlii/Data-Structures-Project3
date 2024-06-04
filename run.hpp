@@ -57,7 +57,7 @@ void run() {
                     double averageTime = totalElapsedTime / 100.0;
                     std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuowac...";
+                    std::cout << "Nacisnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
@@ -77,7 +77,7 @@ void run() {
                     double averageTime = totalElapsedTime / 100.0;
                     std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuowac...";
+                    std::cout << "Nacisnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
@@ -92,7 +92,7 @@ void run() {
                         hashTable.insert(key, value);
                     }
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuowac...";
+                    std::cout << "Nacisnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
