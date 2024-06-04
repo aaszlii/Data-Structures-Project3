@@ -51,11 +51,11 @@ void run() {
                         timer.start();
                         hashTableCopy.insert(klucz, wartosc);
                         timer.stop();
-                        totalElapsedTime += timer.elapsed_milliseconds();
+                        totalElapsedTime += timer.elapsed_nanoseconds();
                     }
 
                     double averageTime = totalElapsedTime / 100.0;
-                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
                     std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
@@ -72,10 +72,10 @@ void run() {
                         timer.start();
                         hashTableCopy.remove(key);
                         timer.stop();
-                        totalElapsedTime += timer.elapsed_milliseconds();
+                        totalElapsedTime += timer.elapsed_nanoseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
                     std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
@@ -141,11 +141,11 @@ void run() {
                         timer.start();
                         hashTableCopy.insert(klucz, wartosc);
                         timer.stop();
-                        totalElapsedTime += timer.elapsed_milliseconds();
+                        totalElapsedTime += timer.elapsed_nanoseconds();
                     }
 
                     double averageTime = totalElapsedTime / 100.0;
-                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     break;
                 }
                 case 2: {
@@ -160,10 +160,10 @@ void run() {
                             timer.start();
                             hashTableCopy.remove(key);
                             timer.stop();
-                            totalElapsedTime += timer.elapsed_milliseconds();
+                            totalElapsedTime += timer.elapsed_nanoseconds();
                         }
                         double averageTime = totalElapsedTime / 100.0;
-                        std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                        std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     }
                     catch (const std::runtime_error& e) {
                         std::cerr << "Wyjatek: " << e.what() << std::endl;
@@ -227,11 +227,11 @@ void run() {
                         timer.start();
                         hashTableCopy.insert(klucz, wartosc);
                         timer.stop();
-                        totalElapsedTime += timer.elapsed_milliseconds();
+                        totalElapsedTime += timer.elapsed_nanoseconds();
                     }
 
                     double averageTime = totalElapsedTime / 100.0;
-                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     break;
                 }
                 case 2: {
@@ -245,10 +245,10 @@ void run() {
                         timer.start();
                         hashTableCopy.remove(key);
                         timer.stop();
-                        totalElapsedTime += timer.elapsed_milliseconds();
+                        totalElapsedTime += timer.elapsed_nanoseconds();
                     }
                     double averageTime = totalElapsedTime / 100.0;
-                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
+                    std::cout << "Sredni czas wykonania operacji: " << averageTime << " ns" << std::endl;
                     break;
                 }
                 case 3: {
