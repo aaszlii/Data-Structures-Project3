@@ -15,7 +15,7 @@ void run() {
     while (choice != 4) {
         std::cout << "Wybierz strukture dla tablicy mieszajacej:" << std::endl;
         std::cout << "1. Tablica mieszajaca z adresowaniem otwartym" << std::endl;
-        std::cout << "2. Tablica mieszajaca z adresowaniem zamknietym" << std::endl;
+        std::cout << "2. Tablica mieszajaca z lancuchowa metoda" << std::endl;
         std::cout << "3. Tablica mieszajaca z Cuckoo Hashing" << std::endl;
         std::cout << "4. Wyjdz" << std::endl;
 
@@ -26,7 +26,7 @@ void run() {
             OpenAddressingHash hashTable(40000);
             int innerChoice = 0;
             while (innerChoice != 5) {
-                std::cout << "Wybrano tablice mieszajaca z adresowaniem zamknietym." << std::endl;
+                std::cout << "Wybrano tablice mieszajaca z adresowaniem otwartym." << std::endl;
                 std::cout << "Wybierz operacje:" << std::endl;
                 std::cout << "1. Wstawienie nowej wartosci" << std::endl;
                 std::cout << "2. Usuniecie pary zwiazanej z kluczem" << std::endl;
@@ -98,7 +98,7 @@ void run() {
                 }
                 case 4: {
                     system("cls");
-                    std::cout << "Tablica mieszajaca z adresowaniem zamknietym:" << std::endl;
+                    std::cout << "Tablica mieszajaca z adresowaniem otwartym:" << std::endl;
                     hashTable.print();
                     std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -116,7 +116,7 @@ void run() {
             ChainedHash hashTable(40000);
             int innerChoice = 0;
             while (innerChoice != 5) {
-                std::cout << "Wybrano tablice mieszajaca z adresowaniem zamknietym." << std::endl;
+                std::cout << "Wybrano tablice mieszajaca z lancuchowa metoda." << std::endl;
                 std::cout << "Wybierz operacje:" << std::endl;
                 std::cout << "1. Wstawienie nowej wartosci" << std::endl;
                 std::cout << "2. Usuniecie pary zwiazanej z kluczem" << std::endl;
@@ -185,10 +185,11 @@ void run() {
                 }
                 case 4: {
                     system("cls");
-                    hashTable.print(); // Wyświetlenie zawartości tablicy mieszającej
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cin.get(); // Oczekiwanie na naciśnięcie Enter
+                    std::cout << "Tablica mieszajaca z lancuchowa metoda:" << std::endl;
+                    hashTable.print();
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora
+                    std::cin.get();
                     break;
                 }
                 case 5:
@@ -288,7 +289,7 @@ void run() {
                     break;
                 }
             }
-            
+
         }
         if (choice == 4) {
             break;
