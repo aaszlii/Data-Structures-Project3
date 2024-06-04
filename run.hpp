@@ -57,7 +57,7 @@ void run() {
                     double averageTime = totalElapsedTime / 100.0;
                     std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
@@ -77,7 +77,7 @@ void run() {
                     double averageTime = totalElapsedTime / 100.0;
                     std::cout << "Sredni czas wykonania operacji: " << averageTime << " ms" << std::endl;
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
@@ -92,7 +92,7 @@ void run() {
                         hashTable.insert(key, value);
                     }
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Czyszczenie bufora wejścia
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.get(); // Oczekiwanie na naciśnięcie Enter
                     break;
                 }
@@ -100,7 +100,7 @@ void run() {
                     system("cls");
                     std::cout << "Tablica mieszajaca z adresowaniem zamknietym:" << std::endl;
                     hashTable.print();
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::cin.get();
                     break;
@@ -198,7 +198,7 @@ void run() {
             }
         }
         if (choice == 3) {
-            CuckooHash hashTable(40000);
+            CuckooHash hashTable(15000);
             int innerChoice = 0;
             while (innerChoice != 5) {
                 std::cout << "Wybrano tablice mieszajaca z Cuckoo Hashing." << std::endl;
@@ -251,22 +251,33 @@ void run() {
                     break;
                 }
                 case 3: {
-                    system("cls");
                     int dataSize;
                     std::cout << "Podaj ilosc danych do wygenerowania:" << std::endl;
                     std::cin >> dataSize;
+
+                    int successfulInsertsBefore = hashTable.getSuccessfulInserts();
                     for (int i = 0; i < dataSize; ++i) {
-                        int key = rand() % 1000;
+                        bool inserted = false;
                         std::string value = "Wartosc " + std::to_string(i);
-                        hashTable.insert(key, value);
+                        while (!inserted) {
+                            int key = rand() % 10000;
+                            size_t successfulInsertsAfter = hashTable.getSuccessfulInserts();
+                            hashTable.insert(key, value);
+                            if (hashTable.getSuccessfulInserts() > successfulInsertsAfter) {
+                                inserted = true;
+                            }
+                        }
                     }
+                    int successfulInsertsAfter = hashTable.getSuccessfulInserts();
+                    std::cout << "Udalo sie dodac " << (successfulInsertsAfter - successfulInsertsBefore) << " kluczy." << std::endl;
+
                     break;
                 }
                 case 4: {
                     system("cls");
                     std::cout << "Tablica mieszajaca z Cuckoo Hashing:" << std::endl;
                     hashTable.print();
-                    std::cout << "Naciśnij Enter, aby kontynuować...";
+                    std::cout << "Naciśnij Enter, aby kontynuowac...";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::cin.get();
                     break;
@@ -277,8 +288,11 @@ void run() {
                     break;
                 }
             }
+            
         }
-
+        if (choice == 4) {
+            break;
+        }
 
     }
 }
